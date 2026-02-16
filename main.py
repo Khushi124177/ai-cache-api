@@ -47,6 +47,9 @@ def query_endpoint(req: QueryRequest):
     if cache_key in cache:
         analytics["cacheHits"] += 1
         latency = int((time.time() - start) * 1000)
+        if latency == 0:
+            latency = 1
+            
         return {
             "answer": cache[cache_key],
             "cached": True,
