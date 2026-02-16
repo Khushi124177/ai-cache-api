@@ -62,6 +62,9 @@ def query_endpoint(req: QueryRequest):
     cache[cache_key] = answer
 
     latency = int((time.time() - start) * 1000)
+    if latency == 0:
+        latency = 1
+        
     return {
         "answer": answer,
         "cached": False,
