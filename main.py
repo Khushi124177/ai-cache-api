@@ -4,6 +4,13 @@ import time
 import hashlib
 
 app = FastAPI()
+@app.get("/")
+def root():
+    return {"status": "API is running"}
+
+@app.head("/")
+def head_root():
+    return
 
 cache = {}
 analytics = {
