@@ -59,6 +59,8 @@ def query_endpoint(req: QueryRequest):
 
     analytics["cacheMisses"] += 1
 
+    time.sleep(1)
+
     # Fake LLM response (replace with real LLM later)
     answer = f"Support Bot Answer: You asked -> {req.query}"
 
