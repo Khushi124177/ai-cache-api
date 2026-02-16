@@ -59,7 +59,7 @@ def query_endpoint(req: QueryRequest):
         "cacheKey": cache_key
     }
 
-@app.get("/analytics")
+@app.api_route("/analytics", methods=["GET", "POST"])
 def analytics_endpoint():
     total = analytics["totalRequests"]
     hits = analytics["cacheHits"]
